@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, JTSImageViewControllerMode) {
 typedef NS_ENUM(NSInteger, JTSImageViewControllerTransition) {
     JTSImageViewControllerTransition_FromOriginalPosition,
     JTSImageViewControllerTransition_FromOffscreen,
+    JTSImageViewControllerTransition_None,
 };
 
 typedef NS_OPTIONS(NSInteger, JTSImageViewControllerBackgroundOptions) {
@@ -52,6 +53,8 @@ extern CGFloat const JTSImageViewController_DefaultBackgroundBlurRadius;
 @property (assign, nonatomic, readonly) JTSImageViewControllerMode mode;
 
 @property (assign, nonatomic, readonly) JTSImageViewControllerBackgroundOptions backgroundOptions;
+
+@property (assign, nonatomic, readwrite) JTSImageViewControllerTransition dismissalTransition;
 
 @property (weak, nonatomic, readwrite) id <JTSImageViewControllerDismissalDelegate> dismissalDelegate;
 
